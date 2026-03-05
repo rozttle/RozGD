@@ -1,0 +1,71 @@
+<!DOCTYPE html><!--document type declaration-->
+<html>
+
+<head><!-- a container for metadata -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Generative Randomness</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <style type="text/css">
+        body {
+            margin: 5% 10%;
+            background-color: cornsilk;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        .circle {
+            width: 100px;
+            height: 100px;
+            background-color: cornflowerblue;
+            border-radius: 50%;
+            position: absolute;
+        }
+    </style>
+</head>
+<script>
+    window.onload = function () {
+
+        const colors = [
+            "cornflowerblue",
+            "salmon",
+            "gold",
+            "orchid",
+            "turquoise",
+            "whitesmoke",
+            "indianred",
+            "darksalmon"
+        ];
+
+        const numberOfCircles = Math.floor(Math.random() * 19) + 2;
+        const body = document.body;
+
+        const bodyWidth = body.clientWidth;
+        const bodyHeight = body.clientHeight;
+
+        for (let i = 0; i < numberOfCircles; i++) {
+
+            const circle = document.createElement("div");
+            circle.classList.add("circle");
+
+            const size = Math.floor(Math.random() * 160) + 10;
+            circle.style.width = size + "px";
+            circle.style.height = size + "px";
+
+            circle.style.backgroundColor =
+                colors[Math.floor(Math.random() * colors.length)];
+
+            const x = Math.random() * (bodyWidth - size);
+            const y = Math.random() * (bodyHeight - size);
+
+            circle.style.left = x + "px";
+            circle.style.top = y + "px";
+
+            body.appendChild(circle);
+        }
+    };
+</script>
+
+<body>
+</body>
