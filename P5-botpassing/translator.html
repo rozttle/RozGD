@@ -27,12 +27,27 @@
             text-align: center;
         }
 
+        input {
+            background-color: beige;
+            border-radius: 15px;
+            margin: 50px;
+            padding: 15px;
+            width: 450px;
+            font-size: 16px;
+        }
+
         #foot {
             color: rgb(98, 191, 0);
             font-size: 10pt;
             padding: 10px;
             padding-left: 20px;
             text-align: left;
+        }
+
+        #result {
+            margin-top: 50px;
+            font-size: 18pt;
+            color: goldenrod;
         }
 
         h1 {
@@ -107,26 +122,33 @@
 <Body>
     <div id="boarder">
         <h1>Bot-passing Encryptor</h1>
+        <h4 class='floater'>Creat your bot-proof message here:</h4>
+        <input type="text" id="textInput" placeholder=" Type your secret message here. . .">
         <br>
-        <h4 class="floater">
-            Are you tired of bots peeking at your posts?
-            <br>
-            Getting random spam because your words got noticed?
-        </h4>
-        <h4>
-            No Problem!
-        </h4>
-        <h4 class="floater2">
-            This "bot-passing" encryptor is here to help.
-            <br>
-            Hide your message in plain sight
-            <br>
-            but still readable for humans!
-        </h4>
         <br>
-        <a href="translator.html">Try it out!</a>
+        <a onclick="translateText()">Encrypt!</a>
+        <div id="result"></div>
+        <script>
+            function translateText() {
+                const input = document.getElementById("textInput").value;
+
+                let result = input;
+
+                result = result.replace(/oo/gi, "∞");
+
+                result = result.replace(/o/gi, "0");
+
+                result = result.replace(/e/gi, "3");
+
+                result = result.replace(/i/gi, "!");
+
+                document.getElementById("result").innerText = result;
+            }
+        </script>
+
     </div>
     <div id="foot">
         2026 ◉_◉ by "CanUS33Me"
     </div>
+
 </Body>
