@@ -1,6 +1,46 @@
- {
-    "name" : "mycolor",
-    "r": 255,
-    "g": 0,
-    "b": 0
+{
+  "coord": {
+    "lon": -71.0598,
+    "lat": 42.3584
+  },
+  "weather": [
+    {
+      "id": 801,
+      "main": "Clouds",
+      "description": "few clouds",
+      "icon": "02d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 287.48,
+    "feels_like": 286.4,
+    "temp_min": 286.09,
+    "temp_max": 288.54,
+    "pressure": 1011,
+    "humidity": 55,
+    "sea_level": 1011,
+    "grnd_level": 1007
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 6.17,
+    "deg": 310,
+    "gust": 10.29
+  },
+  "clouds": {
+    "all": 20
+  },
+  "dt": 1776953416,
+  "sys": {
+    "type": 2,
+    "id": 2007536,
+    "country": "US",
+    "sunrise": 1776937844,
+    "sunset": 1776987241
+  },
+  "timezone": -14400,
+  "id": 4930956,
+  "name": "Boston",
+  "cod": 200
 }
