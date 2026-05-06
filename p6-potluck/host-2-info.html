@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Potluck-Organizer</title>
+    <title>Potluck</title>
     <link rel="stylesheet" href="https://use.typekit.net/bnz5jgi.css">
     <style type="text/css">
         body {
@@ -20,8 +20,7 @@
             height: auto;
             display: block;
             border-radius: 25px;
-            padding-top: 80px;
-            padding-bottom: 100px;
+            padding-top: 60px;
             text-align: center;
         }
 
@@ -36,6 +35,11 @@
         }
 
         h2 {
+            color: crimson;
+            font-weight: 200;
+        }
+
+        h3 {
             color: crimson;
             font-weight: 200;
         }
@@ -58,22 +62,29 @@
 </head>
 
 <script>
-    function saveName() {
-        const name = document.getElementById("username").value;
+    window.onload = function () {
 
-        localStorage.setItem("potluckName", name);
+        const name = localStorage.getItem("potluckName");
+
+        document.getElementById("greeting").innerText =
+            "Hello, " + name + "!";
     }
 </script>
 
-<body>
+<Body>
     <div id="border">
-        <h2>Organizing a potluck?</h2>
+        <h2 id="greeting"></h2>
+        <h3>Now, tell us when you'd like to host:</h3>
+        <input type="datetime-local">
         <br>
-        <h2>Tell us your name first:</h2>
-        <input type="text" id="username">
+        <h3>and, where:</h3>
+        <input type="text">
+        <br>
+        <h3>anything specific you'd like your guest to bring:</h3>
+        <input type="text">
         <br>
         <br>
         <br>
-        <a href="2-host-info.html" onclick="saveName()">Start!</a>
+        <a href="host-3-home.html">All set!</a>
     </div>
 </Body>

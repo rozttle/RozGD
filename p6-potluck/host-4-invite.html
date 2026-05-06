@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Potluck</title>
+    <link rel="stylesheet" href="https://use.typekit.net/bnz5jgi.css">
+    <style type="text/css">
+        body {
+            margin-top: 1%;
+            margin-bottom: 5%;
+            font-family: "edu-au-vic-wa-nt-pre";
+            text-align: center;
+        }
+
+        #border {
+            width: auto;
+            height: auto;
+            display: block;
+            border-radius: 25px;
+            padding-top: 80px;
+            padding-bottom: 100px;
+            text-align: center;
+        }
+
+        input {
+            background-color: seashell;
+            border-color: crimson;
+            border-radius: 10px;
+            border-width: 1px;
+            padding: 15px;
+            font-size: 14px;
+            font-family: "edu-nsw-act-hand-precursive";
+        }
+
+        hr {
+            border: 0.5px solid crimson;
+        }
+
+        h2 {
+            color: crimson;
+            font-weight: 200;
+        }
+
+        h3 {
+            color: crimson;
+            font-weight: 200;
+        }
+
+        a {
+            margin: 15px;
+            padding: 15px;
+            color: crimson;
+            border: solid 1px crimson;
+            border-radius: 50%;
+            font-size: 14pt;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: goldenrod;
+        }
+
+        #confirmation {
+            color: goldenrod;
+            margin-top: 30px;
+            font-size: 16pt;
+        }
+    </style>
+</head>
+
+<script>
+    window.onload = function () {
+
+        const name = localStorage.getItem("potluckName");
+
+        document.getElementById("title").innerText =
+            name + "' table";
+    }
+</script>
+
+<script>
+    window.onload = function () {
+
+        const name = localStorage.getItem("potluckName");
+
+        document.getElementById("title").innerText =
+            name + "' table";
+    }
+
+    function sendInvite() {
+
+        document.getElementById("confirmation").innerText =
+            "Invitation sent!";
+    }
+</script>
+
+<Body>
+    <h2 id="title"></h2>
+    <hr>
+    <br>
+    <div id="border">
+        <h3>Email of your guest:</h3>
+        <input type="text">
+        <p id="confirmation"></p>
+        <br>
+        <br>
+        <a onclick="sendInvite()">Send!</a>
+        <a href="host-3-home.html">Return</a>
+    </div>
+</Body>
