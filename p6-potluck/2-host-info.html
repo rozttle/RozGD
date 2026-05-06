@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Potluck</title>
+    <link rel="stylesheet" href="https://use.typekit.net/bnz5jgi.css">
+    <style type="text/css">
+        body {
+            margin-top: 5%;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-bottom: 15%;
+            font-family: "edu-au-vic-wa-nt-pre";
+        }
+
+        #border {
+            width: auto;
+            height: auto;
+            display: block;
+            border-radius: 25px;
+            padding-top: 80px;
+            padding-bottom: 100px;
+            text-align: center;
+        }
+
+        input {
+            background-color: seashell;
+            border-color: crimson;
+            border-radius: 10px;
+            border-width: 1px;
+            padding: 15px;
+            font-size: 14px;
+            font-family: "edu-nsw-act-hand-precursive";
+        }
+
+        h2 {
+            color: crimson;
+            font-weight: 200;
+        }
+
+        a {
+            padding: 15px;
+            color: crimson;
+            border: solid 1px crimson;
+            border-radius: 50%;
+            font-size: 14pt;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: goldenrod;
+        }
+    </style>
+</head>
+
+<script>
+    window.onload = function () {
+
+        const name = localStorage.getItem("potluckName");
+
+        document.getElementById("greeting").innerText =
+            "Hello, " + name + "!";
+    }
+</script>
+
+<Body>
+    <div id="border">
+        <h2 id="greeting"></h2>
+        <br>
+        <h2>Now, tell us when you'd like to host:</h2>
+        <input type="text">
+        <br>
+        <h2>and, where:</h2>
+        <input type="text">
+        <br>
+        <br>
+        <br>
+        <a href="3-host-home.html">All set!</a>
+    </div>
+</Body>

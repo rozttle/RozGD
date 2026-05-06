@@ -4,15 +4,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Potluck-Organizer</title>
+    <title>Potluck</title>
     <link rel="stylesheet" href="https://use.typekit.net/bnz5jgi.css">
     <style type="text/css">
         body {
-            margin-top: 5%;
+            margin-top: 2%;
             margin-left: 10%;
             margin-right: 10%;
             margin-bottom: 15%;
             font-family: "edu-au-vic-wa-nt-pre";
+            text-align: center;
         }
 
         #border {
@@ -58,22 +59,17 @@
 </head>
 
 <script>
-    function saveName() {
-        const name = document.getElementById("username").value;
+    window.onload = function () {
 
-        localStorage.setItem("potluckName", name);
+        const name = localStorage.getItem("potluckName");
+
+        document.getElementById("title").innerText =
+            name + "' table";
     }
 </script>
 
-<body>
+<Body>
+    <h2 id="title"></h2>
     <div id="border">
-        <h2>Organizing a potluck?</h2>
-        <br>
-        <h2>Tell us your name first:</h2>
-        <input type="text" id="username">
-        <br>
-        <br>
-        <br>
-        <a href="2-host-info.html" onclick="saveName()">Start!</a>
     </div>
 </Body>
