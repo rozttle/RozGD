@@ -17,11 +17,37 @@
         #border {
             width: auto;
             height: auto;
-            display: block;
+            display: flex;
             border-radius: 25px;
+            margin-left: 5%;
+            margin-right: 5%;
             padding-top: 5px;
             padding-bottom: 100px;
             text-align: center;
+        }
+
+        #photo {
+            width: 70%;
+            height: auto;
+            display: block;
+            align-items: center;
+            text-align: center;
+        }
+
+        #info {
+            width: 30%;
+            height: auto;
+            display: block;
+            text-align: left;
+        }
+
+        #preview {
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            max-height: 300px;
+            border-radius: 15px;
+            display: none;
         }
 
         input {
@@ -66,21 +92,61 @@
     </style>
 </head>
 
-<script>
-    window.onload = function () {
-
-        const name = localStorage.getItem("potluckName");
-
-        document.getElementById("title").innerText =
-            name + "' table";
-    }
-</script>
-
 <Body>
     <h2 id="title"></h2>
     <hr>
     <br>
+    <h3>Tell Us a Little About What You Bring Here!</h3>
     <div id="border">
-        <h3>Tell Us a Little About What You Bring</h3>
+        <div id="photo">
+            <h3>Choose a phto:</h3>
+            <br>
+            <input type="file" id="dishphoto" name="dishphoto" accept="image/png, image/jpeg" />
+            <br>
+            <img id="preview" src="" alt="Dish Preview">
+
+        </div>
+        <div id="info">
+            <h3>Name of the Chef</h3>
+            <input type="text">
+            <h3>Name of the Dish</h3>
+            <input type="text">
+            <h3>Origin</h3>
+            <input type="text">
+            <h3>Ingredient Used</h3>
+            <input type="text">
+        </div>
     </div>
+    <a href="guest-2-tableview.html">Place the Dish!</a>
+    <script>
+        window.onload = function () {
+
+            const name = localStorage.getItem("potluckName");
+
+            document.getElementById("title").innerText =
+                name + "' table";
+
+            const fileInput = document.getElementById("dishphoto");
+            const preview = document.getElementById("preview");
+
+            fileInput.addEventListener("change", function () {
+
+                const file = this.files[0];
+
+                if (file) {
+
+                    const reader = new FileReader();
+
+                    reader.addEventListener("load", function () {
+
+                        preview.src = reader.result;
+                        preview.style.display = "block";
+
+                    });
+
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+    </script>
 </Body>
