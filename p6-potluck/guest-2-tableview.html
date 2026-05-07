@@ -8,11 +8,10 @@
     <link rel="stylesheet" href="https://use.typekit.net/bnz5jgi.css">
     <style type="text/css">
         body {
-            margin-top: 5%;
-            margin-left: 10%;
-            margin-right: 10%;
-            margin-bottom: 15%;
+            margin-top: 1%;
+            margin-bottom: 5%;
             font-family: "edu-au-vic-wa-nt-pre";
+            text-align: center;
         }
 
         #border {
@@ -20,7 +19,8 @@
             height: auto;
             display: block;
             border-radius: 25px;
-            padding-top: 60px;
+            padding-top: 40px;
+            padding-bottom: 100px;
             text-align: center;
         }
 
@@ -34,17 +34,17 @@
             font-family: "edu-nsw-act-hand-precursive";
         }
 
+        hr {
+            border: 0.5px solid crimson;
+        }
+
         h2 {
             color: crimson;
             font-weight: 200;
         }
 
-        h3 {
-            color: crimson;
-            font-weight: 150;
-        }
-
         a {
+            margin: 15px;
             padding: 15px;
             color: crimson;
             border: solid 1px crimson;
@@ -66,36 +66,18 @@
 
         const name = localStorage.getItem("potluckName");
 
-        document.getElementById("greeting").innerText =
-            "Hello, " + name + "!";
-    }
-
-    function saveInfo() {
-
-        const date = document.getElementById("date").value;
-        const address = document.getElementById("address").value;
-        const item = document.getElementById("item").value;
-
-        localStorage.setItem("potluckDate", date);
-        localStorage.setItem("potluckAddress", address);
-        localStorage.setItem("potluckItem", item);
+        document.getElementById("title").innerText =
+            name + "' table";
     }
 </script>
 
 <Body>
+    <h2 id="title"></h2>
+    <hr>
+    <br>
+    <a href="guest-3-dish.html">Add Your Dish!</a>
+    </div>
     <div id="border">
-        <h2 id="greeting"></h2>
-        <h3>Now, tell us when you'd like to host:</h3>
-        <input type="datetime-local" id="date">
-        <br>
-        <h3>and, where:</h3>
-        <input type="text" id="address">
-        <br>
-        <h3>anything specific you'd like your guest to bring:</h3>
-        <input type="text" id="item">
-        <br>
-        <br>
-        <br>
-        <a href="host-3-home.html" onclick="saveInfo()">All set!</a>
+        <img src="0-links/table.svg" width="70%" height="auto">
     </div>
 </Body>

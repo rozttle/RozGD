@@ -19,8 +19,10 @@
             width: auto;
             height: auto;
             display: block;
+            border: solid 1px crimson;
             border-radius: 25px;
-            padding-top: 60px;
+            padding-top: 40px;
+            padding-bottom: 70px;
             text-align: center;
         }
 
@@ -64,38 +66,42 @@
 <script>
     window.onload = function () {
 
-        const name = localStorage.getItem("potluckName");
+        const host = localStorage.getItem("potluckName");
+        const date = localStorage.getItem("potluckDate");
+        const address = localStorage.getItem("potluckAddress");
+        const item = localStorage.getItem("potluckItem");
 
-        document.getElementById("greeting").innerText =
-            "Hello, " + name + "!";
+        document.getElementById("hostname").innerText =
+            "You are invited to " + host + "'s Potluck!";
+
+        document.getElementById("date").innerText =
+            date;
+
+        document.getElementById("address").innerText =
+            address;
+
+        document.getElementById("item").innerText =
+            item;
     }
 
-    function saveInfo() {
-
-        const date = document.getElementById("date").value;
-        const address = document.getElementById("address").value;
-        const item = document.getElementById("item").value;
-
-        localStorage.setItem("potluckDate", date);
-        localStorage.setItem("potluckAddress", address);
-        localStorage.setItem("potluckItem", item);
-    }
+    const date = localStorage.getItem("potluckDate");
+    const address = localStorage.getItem("potluckAddress");
+    const item = localStorage.getItem("potluckItem");
 </script>
 
 <Body>
     <div id="border">
-        <h2 id="greeting"></h2>
-        <h3>Now, tell us when you'd like to host:</h3>
-        <input type="datetime-local" id="date">
+        <h2 id="hostname"></h2>
         <br>
-        <h3>and, where:</h3>
-        <input type="text" id="address">
+        <h3>The Potluck will start on:</h3>
+        <h3 id="date"></h3>
+        <h3>and will be hosted at:</h3>
+        <h3 id="address"></h3>
         <br>
-        <h3>anything specific you'd like your guest to bring:</h3>
-        <input type="text" id="item">
+        <h3>Items To Bring:</h3>
+        <h3 id="item"></h3>
         <br>
         <br>
-        <br>
-        <a href="host-3-home.html" onclick="saveInfo()">All set!</a>
+        <a href="guest-2-tableview.html">Join the Party!</a>
     </div>
 </Body>
