@@ -91,10 +91,36 @@
             name + "' table";
     }
 
-    function sendInvite() {
+    window.onload = function () {
+
+        const name = localStorage.getItem("potluckName");
+
+        document.getElementById("title").innerText =
+            name + "' table";
+    }
+
+    function sendEmail() {
+
+        const email = document.getElementById("guestEmail").value;
+
+        const host = localStorage.getItem("potluckName");
+        const date = localStorage.getItem("potluckDate");
+        const address = localStorage.getItem("potluckAddress");
+        const item = localStorage.getItem("potluckItem");
+
+        const subject = "You're Invited to a Potluck!";
+
+        const body =
+            "Hello!%0D%0A%0D%0A" +
+            "You are invited to " + host + "'s potluck.%0D%0A%0D%0A" +
+            "Click the link below to see details!%0D%0A%0D%0A" +
+            "https://rozttle.github.io/RozGD/p6-organizer/guest-1-invitation.html";
+
+        window.location.href =
+            `mailto:${email}?subject=${subject}&body=${body}`;
 
         document.getElementById("confirmation").innerText =
-            "Invitation sent!";
+            "Invitation prepared!";
     }
 </script>
 
@@ -104,11 +130,11 @@
     <br>
     <div id="border">
         <h3>Email of your guest:</h3>
-        <input type="text">
+        <input type="email" id="guestEmail">
         <p id="confirmation"></p>
         <br>
         <br>
-        <a onclick="sendInvite()">Send!</a>
+        <a onclick="sendEmail()">Send!</a>
         <a href="host-3-home.html">Return</a>
     </div>
 </Body>
