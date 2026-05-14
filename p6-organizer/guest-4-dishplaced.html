@@ -62,7 +62,7 @@
             transition: 0.3s ease;
             pointer-events: none;
             text-align: left;
-            color: darkgoldenrod
+            color: crimson;
         }
 
         .dishContainer:hover .dishInfo {
@@ -117,19 +117,19 @@
             localStorage.getItem("dishName");
 
         document.getElementById("chefName").innerText =
-            "Chef: " +
+            "CHEF: " +
             localStorage.getItem("dishChef");
 
         document.getElementById("dishOrigin").innerText =
-            "Origin: " +
+            "ORIGIN: " +
             localStorage.getItem("dishOrigin");
 
         document.getElementById("dishIngredients").innerText =
-            "Ingredients: " +
+            "INGREDIENTS: " +
             localStorage.getItem("dishIngredients");
 
         document.getElementById("dishAllergens").innerText =
-            "Allergens: " +
+            "ALLERGENS: " +
             localStorage.getItem("dishAllergens");
 
     }
@@ -158,7 +158,7 @@
 
                 <p id="dishIngredients"></p>
 
-                <p style="color: crimson;" id="dishAllergens"></p>
+                <p style="text-decoration: underline goldenrod dotted" id="dishAllergens"></p>
 
             </div>
 
