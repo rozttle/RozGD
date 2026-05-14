@@ -43,6 +43,32 @@
             border-radius: 50%;
         }
 
+        .dishContainer {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dishInfo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 220px;
+            background-color: seashell;
+            padding: 15px;
+            border: double, 5px, crimson;
+            border-radius: 20px;
+            opacity: 0;
+            transition: 0.3s ease;
+            pointer-events: none;
+            text-align: left;
+            color: darkgoldenrod
+        }
+
+        .dishContainer:hover .dishInfo {
+            opacity: 1;
+        }
+
         hr {
             border: 0.5px solid crimson;
         }
@@ -76,7 +102,7 @@
         const name = localStorage.getItem("potluckName");
 
         document.getElementById("title").innerText =
-            "Welcome to " + name + "'s Potluck Party";
+            "Welcome to " + name + "'s Potluck Party!";
 
 
         const savedImage = localStorage.getItem("dishImage");
@@ -87,6 +113,25 @@
 
             img.src = savedImage;
         }
+        document.getElementById("dishTitle").innerText =
+            localStorage.getItem("dishName");
+
+        document.getElementById("chefName").innerText =
+            "Chef: " +
+            localStorage.getItem("dishChef");
+
+        document.getElementById("dishOrigin").innerText =
+            "Origin: " +
+            localStorage.getItem("dishOrigin");
+
+        document.getElementById("dishIngredients").innerText =
+            "Ingredients: " +
+            localStorage.getItem("dishIngredients");
+
+        document.getElementById("dishAllergens").innerText =
+            "Allergens: " +
+            localStorage.getItem("dishAllergens");
+
     }
 </script>
 
@@ -94,10 +139,29 @@
     <h2 id="title"></h2>
     <hr>
     <br>
-    <a href="guest-3-dish.html">Add Your Dish!</a>
+    <a href="guest-3-dish.html">Place Your Dish</a>
+    <a href="guest-5-partydetails.html">Party Details</a>
     <br>
     <br>
     <div id="border">
-        <img id="dishDisplay" src="">
+        <div class="dishContainer">
+
+            <img id="dishDisplay" src="">
+
+            <div class="dishInfo">
+
+                <h3 id="dishTitle"></h3>
+
+                <p id="chefName"></p>
+
+                <p id="dishOrigin"></p>
+
+                <p id="dishIngredients"></p>
+
+                <p style="color: crimson;" id="dishAllergens"></p>
+
+            </div>
+
+        </div>
     </div>
 </Body>

@@ -81,7 +81,6 @@
         .allergens label {
             margin-bottom: 8px;
             cursor: pointer;
-            display: flexbox;
             margin-right: 20px;
         }
 
@@ -164,7 +163,10 @@
             </div>
         </div>
     </div>
-    <a href="host-6-dishpaced.html">Place the Dish!</a>
+    <a href="host-6-dishpaced.html" onclick="saveDishInfo()">
+        Place the Dish!
+    </a>
+
     <script>
         window.onload = function () {
 
@@ -196,6 +198,47 @@
                     reader.readAsDataURL(file);
                 }
             });
+        }
+
+        function saveDishInfo() {
+
+            const chef =
+                document.getElementById("chef").value;
+
+            const dishName =
+                document.getElementById("dishName").value;
+
+            const origin =
+                document.getElementById("Origin").value;
+
+            const ingredients =
+                document.getElementById("ingredients").value;
+
+            const checkedAllergens =
+                document.querySelectorAll(
+                    '.allergens input[type="checkbox"]:checked'
+                );
+
+            let allergenList = [];
+
+            checkedAllergens.forEach(function (box) {
+
+                allergenList.push(box.value);
+
+            });
+
+            localStorage.setItem("dishChef", chef);
+
+            localStorage.setItem("dishName", dishName);
+
+            localStorage.setItem("dishOrigin", origin);
+
+            localStorage.setItem("dishIngredients", ingredients);
+
+            localStorage.setItem(
+                "dishAllergens",
+                allergenList.join(", ")
+            );
         }
     </script>
 </Body>

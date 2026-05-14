@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Potluck</title>
+    <link rel="stylesheet" href="https://use.typekit.net/bnz5jgi.css">
+    <style type="text/css">
+        body {
+            margin-top: 5%;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-bottom: 15%;
+            font-family: "edu-au-vic-wa-nt-pre";
+        }
+
+        #border {
+            width: auto;
+            height: auto;
+            display: block;
+            border: double 5px crimson;
+            border-radius: 25px;
+            padding-top: 40px;
+            padding-bottom: 70px;
+            text-align: center;
+        }
+
+        input {
+            background-color: seashell;
+            border-color: crimson;
+            border-radius: 10px;
+            border-width: 1px;
+            padding: 15px;
+            font-size: 14px;
+            font-family: "edu-nsw-act-hand-precursive";
+        }
+
+        h2 {
+            color: crimson;
+            font-weight: 200;
+        }
+
+        h3 {
+            color: crimson;
+            font-weight: 150;
+        }
+
+        h4 {
+            color: darkgoldenrod
+        }
+
+        a {
+            padding: 15px;
+            color: crimson;
+            border: solid 1px crimson;
+            border-radius: 50%;
+            font-size: 14pt;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: goldenrod;
+        }
+    </style>
+</head>
+
+<script>
+    window.onload = function () {
+
+        const host = localStorage.getItem("potluckName");
+        const date = localStorage.getItem("potluckDate");
+        const address = localStorage.getItem("potluckAddress");
+        const item = localStorage.getItem("potluckItem");
+
+        document.getElementById("hostname").innerText =
+            "You Are Invited to " + host + "'s Potluck!";
+
+        document.getElementById("date").innerText =
+            date;
+
+        document.getElementById("address").innerText =
+            address;
+
+        document.getElementById("item").innerText =
+            item;
+    }
+
+    const date = localStorage.getItem("potluckDate");
+    const address = localStorage.getItem("potluckAddress");
+    const item = localStorage.getItem("potluckItem");
+</script>
+
+<Body>
+    <div id="border">
+        <h2 id="hostname"></h2>
+        <br>
+        <h3>Staring Time:</h3>
+        <h4 id="date"></h4>
+        <h3>Location:</h3>
+        <h4 id="address"></h4>
+        <h3>Items Consider to Bring:</h3>
+        <h4 id="item"></h4>
+        <br>
+        <br>
+        <a href="guest-4-dishplaced.html">Back to The Table!</a>
+    </div>
+</Body>
