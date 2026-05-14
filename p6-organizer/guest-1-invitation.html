@@ -46,6 +46,10 @@
             font-weight: 150;
         }
 
+        h4 {
+            color: darkgoldenrod
+        }
+
         a {
             padding: 15px;
             color: crimson;
@@ -72,7 +76,7 @@
         const item = localStorage.getItem("potluckItem");
 
         document.getElementById("hostname").innerText =
-            "You are invited to " + host + "'s Potluck!";
+            "You Are Invited to " + host + "'s Potluck!";
 
         document.getElementById("date").innerText =
             date;
@@ -93,13 +97,12 @@
     <div id="border">
         <h2 id="hostname"></h2>
         <br>
-        <h3>The Potluck will start on:</h3>
-        <h3 id="date"></h3>
-        <h3>and will be hosted at:</h3>
-        <h3 id="address"></h3>
-        <br>
-        <h3>Items To Bring:</h3>
-        <h3 id="item"></h3>
+        <h3>Staring Time:</h3>
+        <h4 id="date"></h4>
+        <h3>Location:</h3>
+        <h4 id="address"></h4>
+        <h3>Items Consider to Bring:</h3>
+        <h4 id="item"></h4>
         <br>
         <br>
         <a href="guest-2-tableview.html">Join the Party!</a>
